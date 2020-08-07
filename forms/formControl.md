@@ -27,15 +27,15 @@
 
 .form-label{
   display:block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.5em;
 }
 .form-control{
   display:block;
   width: 100%;
   border: 1px solid #bbb;
   padding: 0.5em;
-  border-radius: 0.3rem;
-  margin-bottom: 0.5rem;
+  border-radius: 0.3em;
+  margin-bottom: 0.5em;
 }
 .form-control:focus {
   outline : none;
@@ -83,6 +83,6 @@ padding을 em으로 주고 font-size만 조정하면 height가 자연스럽게 �
 
 - <datalist>
 - 목록 외에 user 입력을 받을 수 있고
-- 여러 형태의 data 선택지를 제공하고 입력받을 수 있음.
+- 여러 형태로 data 선택지를 제공하고 입력받을 수 있음.
 - https://stackoverflow.com/questions/6865943/html-form-select-option-vs-datalist-option
 - https://demo.agektmr.com/datalist/

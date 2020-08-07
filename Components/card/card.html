@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      /* default */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      .card {
+        border: 1px solid #ddd;
+        border-radius: 1em;
+        padding: 1.6em 1.6em;
+        background-color: #fff;
+      }
+      .card-img-top {
+        width: 100%;
+      }
+      .card-body{
+          margin: 1em 0;
+      }
+      .card-title {
+        margin-bottom: 1em;
+      }
+      .card-text {
+        margin-bottom: 1em;
+      }
+      
+      .btn {
+        display: inline-block;
+        padding: 0.6em 1em;
+        border-radius: 0.2em;
+        border: 2px solid transparent;
+        background-color: #0f62fe;
+        color: #fff;
+        text-decoration: none;
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        outline: none;
+        cursor: pointer;
+        vertical-align: middle;
+        transition: background-color 0.15s ease-in-out,
+          box-shadow 0.25s ease-in-out;
+        }
+        .btn:hover {
+            background-color: #0043ce;
+        }
+        .btn:focus {
+            box-shadow: 0 0 0 0.2em #a6c8ff;
+        }
+        .btn:active {
+            box-shadow: 0 0 0 0.2em #a6c8ff;
+        }
+
+    </style>
+  </head>
+  <body>
+      <div>
+      <h1 style="text-align:center; margin-bottom:1rem;">Card</h1>
+    <div class="card" style="width: 18rem;">
+      <img
+        src="https://images.unsplash.com/photo-1593642702749-b7d2a804fbcf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
+        class="card-img-top"
+        class="card-img-top"
+        alt="..."
+      />
+      <div class="card-body">
+        <h2 class="card-title">Card title</h5>
+        <p class="card-text">
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </p>
+        <a href="#" class="btn btn--primary">Go somewhere</a>
+      </div>
+    </div>
+</div>
+  </body>
+</html>

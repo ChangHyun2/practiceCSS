@@ -5,11 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      body {
-        display: flex;
-        justify-content: space-around;
-      }
-
       .btn {
         color: #fff;
         font-size: 1rem;
@@ -18,31 +13,31 @@
         border-radius: 0.2em;
         padding: 0.6em 0.8em;
         cursor: pointer;
-        margin-bottom: 1rem;
         outline: none;
       }
       .btn:hover {
         background: #026cf4;
       }
 
+      .dropdowns {
+        display: flex;
+        justify-content: space-around;
+      }
+
       .dropdown {
         position: relative;
       }
 
-      .dropdown-menu:not(.show) {
-        display: none;
-      }
-
-      .dropdown-toggle {
+      .dropdown-toggler {
         font-size: 1em;
         margin-bottom: 0;
         user-select: none;
         /*  btn margin 초기화  */
       }
-      .dropdown-toggle:focus {
+      .dropdown-toggler:focus {
         background: #026cf4;
       }
-      .dropdown-toggle::after {
+      .dropdown-toggler::after {
         display: inline-block;
         content: "";
         vertical-align: middle;
@@ -54,16 +49,21 @@
 
       .dropdown-menu {
         position: absolute;
-        z-index: 2;
         top: 100%;
         left: 0;
         display: inline-block;
         border: 1px solid #ddd;
         border-radius: 0.2em;
-        font-size: 1em;
         padding: 0.5em 0;
         background: #fff;
         user-select: none;
+        z-index: 2; /* not default*/
+      }
+      .dropdown-menu--collapsible {
+        position: unset;
+      }
+      .dropdown-menu:not(.dropdown-menu--collapsible):not(.show) {
+        display: none;
       }
 
       .dropdown-menu > a {
@@ -72,15 +72,24 @@
         text-decoration: none;
         white-space: nowrap;
       }
-      .dropdown-menu > a:last-child {
-        margin-bottom: 0;
-      }
+
       .dropdown-item {
         transition: background-color 0.1s linear;
         padding: 0.5em 1em;
       }
       .dropdown-item:hover {
         background-color: #eee;
+      }
+
+      .backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+      }
+      .backdrop:not(.show) {
+        display: none;
       }
 
       .text-md {
@@ -90,83 +99,185 @@
       .text-lg {
         font-size: 1.4rem;
       }
+
+      .collapse {
+        overflow: hidden;
+        transition: height 1s ease-out;
+      }
+      .collapse:not(.show) {
+        display: none;
+      }
+      h2 {
+        margin-top: 3rem;
+        padding-top: 1rem;
+        border-top: 1px solid #eee;
+      }
     </style>
   </head>
   <body>
-    <div>
-      <div class="dropdown">
-        <button
-          class="btn btn-secondary dropdown-toggle"
-          type="button"
-          id="dropdownMenuButton"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
+    <h1>Dropdown</h1>
+    <h2>Dropdown + Backdrop(white)</h2>
+    <div class="dropdowns">
+      <div class="backdrop"></div>
+      <div>
+        <div class="dropdown">
+          <button
+            class="btn btn-secondary dropdown-toggler"
+            type="button"
+            id="dropdownMenuButton"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Dropdown
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="dropdown text-md">
+          <button
+            class="btn btn-secondary dropdown-toggler"
+            type="button"
+            id="dropdownMenuButton"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Dropdown
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="dropdown text-lg">
+          <button
+            class="btn btn-secondary dropdown-toggler"
+            type="button"
+            id="dropdownMenuButton"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Dropdown
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h2>Dropdown + Backdrop(white) + Collapse</h2>
+
+    <div id="collapsibleDropdown" class="dropdown">
+      <button
+        class="btn btn-secondary dropdown-toggler"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        Dropdown
+      </button>
+      <div class="collapse" data-collapsed="true">
+        <div
+          class="dropdown-menu dropdown-menu--collapsible"
+          aria-labelledby="dropdownMenuButton"
         >
-          Dropdown
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" href="#">Action</a>
           <a class="dropdown-item" href="#">Another action</a>
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </div>
     </div>
-    <div>
-      <div class="dropdown text-md">
-        <button
-          class="btn btn-secondary dropdown-toggle"
-          type="button"
-          id="dropdownMenuButton"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          Dropdown
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </div>
-    </div>
-    <div class="lg">
-      <div class="dropdown text-lg">
-        <button
-          class="btn btn-secondary dropdown-toggle"
-          type="button"
-          id="dropdownMenuButton"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          Dropdown
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </div>
-    </div>
+
     <script>
-      const dropdownTogglers = document.querySelectorAll(".dropdown-toggle");
-      dropdownTogglers.forEach((toggler) => {
-        toggler.addEventListener("click", function () {
-          this.nextElementSibling.classList.toggle("show");
-        });
+      /* dropdown */
+      const $dropdowns = document.querySelector(".dropdowns");
+      $dropdowns.addEventListener("click", function (e) {
+        const backdrop = this.querySelector(".backdrop");
+        if (e.target.type === "button") {
+          const menu = e.target.nextElementSibling;
+          menu.classList.toggle("show");
+          backdrop.classList.add("show");
+        }
+
+        if (e.target === backdrop) {
+          const menus = this.querySelectorAll(".dropdown-menu");
+          menus.forEach((menu) => menu.classList.remove("show"));
+        }
       });
 
-      const dropdownMenus = document.querySelectorAll(".dropdown-menu");
-      document.addEventListener("click", function (e) {
-        dropdownMenus.forEach((dropdownMenu, i) => {
-          if (e.target === dropdownTogglers[i]) return;
-          if (e.target.closest(".dropdown-menu") !== dropdownMenu) {
-            dropdownMenu.classList.remove("show");
-          }
+      /* collapsible dropdown*/
+
+      /* collapse*/
+      const collapseElement = function (element) {
+        element.style.height = element.scrollHeight + "px";
+        // prevent disappearing non-collapsed element on first click.
+        const elementTransition = element.style.transition;
+        element.style.transition = "";
+
+        element.style.height = element.scrollHeight + "px";
+        requestAnimationFrame(() => {
+          element.style.transition = elementTransition;
+          element.style.height = 0 + "px";
         });
-      });
+
+        const transitionEndHandler = () => {
+          element.dataset.collapsed = "true";
+          element.classList.remove("show");
+          element.removeEventListener("transitionend", transitionEndHandler);
+        };
+        element.addEventListener("transitionend", transitionEndHandler);
+      };
+
+      const expandElement = (element) => {
+        element.classList.add("show");
+
+        element.style.height = 0;
+        element.style.height = element.scrollHeight + "px";
+
+        element.dataset.collapsed = "false";
+      };
+
+      const collapseEventHandler = function expandOrCollapseElement(element) {
+        element.dataset.collapsed === "false"
+          ? collapseElement(element)
+          : expandElement(element);
+      };
+
+      const bindTogglerAndCollapsibleElement = (toggler, event, element) => {
+        toggler.addEventListener(
+          event,
+          collapseEventHandler.bind(null, element)
+        );
+      };
+
+      /* bind dropdown toggler and collapsible dropdown menu */
+      const collapsibleDropdown = document.getElementById(
+        "collapsibleDropdown"
+      );
+      const dropdownCollapseToggler = collapsibleDropdown.querySelector(
+        ".dropdown-toggler"
+      );
+      const dropdownCollapse = collapsibleDropdown.querySelector(".collapse");
+
+      bindTogglerAndCollapsibleElement(
+        dropdownCollapseToggler,
+        "click",
+        dropdownCollapse
+      );
     </script>
   </body>
 </html>

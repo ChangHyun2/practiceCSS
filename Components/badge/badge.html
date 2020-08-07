@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .badge {
+        color: #fff;
+        vertical-align: middle;
+        font-size: 0.8em;
+        padding: 0.25em 0.6em;
+        background: #6c757d;
+        border-radius: 0.2em;
+      }
+
+      .btn {
+        color: #fff;
+        font-size: 1rem;
+        background: #025ce2;
+        border: none;
+        border-radius: 0.2em;
+        padding: 0.6em 0.8em;
+      }
+
+      /* util */
+      .rounded-pill {
+        border-radius: 1em;
+      }
+
+      h1:last-of-type,h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>responsive Badge</h1>
+    <h1>
+      h1 Badge + .rounded-pill
+      <span class="badge rounded-pill">New</span>
+    </h2>
+    <h2>h2 Badge <span class="badge">New</span></h2>
+    <h3>h3 Badge <span class="badge">New</span></h3>
+    <h4>h4 Badge <span class="badge">New</span></h4>
+    <h5>h5 Badge <span class="badge">New</span></h5>
+    <h6>h6 Badge <span class="badge">New</span></h6>
+
+    <h2>Btn + Badge</h2>
+    <button type="button" class="btn">
+      Notifications <span class="badge">4</span>
+    </button>
+
+    <!-- for screen reader -->
+    <button type="button" class="btn">
+      Profile <span class="badge">9</span>
+      <span class="sr-only">unread messages</span>
+    </button>
+
+    <!-- rounded-pill -->
+    <span class="badge rounded-pill bg-danger">Danger</span>
+    <script></script>
+  </body>
+</html>

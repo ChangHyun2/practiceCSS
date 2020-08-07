@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* default */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      /* btn */
+      .btn {
+        display: inline-block;
+        padding: 0.6em 1em;
+        border-radius: 0.2em;
+        border: 2px solid transparent;
+        background-color: #0f62fe;
+        color: #fff;
+        text-decoration: none;
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        outline: none;
+        cursor: pointer;
+        vertical-align: middle;
+        margin-bottom: 1rem;
+        transition: background-color 0.15s ease-in-out,
+          box-shadow 0.25s ease-in-out;
+      }
+      p .btn {
+        font-size: 1rem;
+      }
+      .btn:hover {
+        background-color: #0043ce;
+      }
+      .btn:focus {
+        box-shadow: 0 0 0 0.2em #a6c8ff;
+      }
+      .btn:active {
+        box-shadow: 0 0 0 0.2em #a6c8ff;
+      }
+
+      /* card */
+      .card {
+        border: 1px solid #ddd;
+        border-radius: 1em;
+        padding: 1.6em 1.2em;
+      }
+
+      .card-title {
+        margin-bottom: 1em;
+      }
+
+      .card-text {
+        margin-bottom: 1em;
+      }
+
+      .container {
+        padding: 1rem;
+      }
+
+      .collapse {
+        overflow: hidden;
+        transition: height 1s ease-out;
+      }
+      .collapse:not(.show) {
+        display: none;
+      }
+
+      .container-row {
+        padding: 1rem;
+      }
+      .collapse-row {
+        width: 100%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        transition: width 1s ease-out;
+        overflow-x: hidden;
+      }
+      .collapse-row:not(.show) {
+        width: 0%;
+        position: relative;
+      }
+      /* 잔상 line 제거 */
+      .collapse-row:not(.show):after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #fff;
+      }
+      h2 {
+        margin-top: 3rem;
+        padding-top: 1rem;
+        border-top: 1px solid #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Collapse</h1>
+    <h2>Collapse (default) + Card</h2>
+    <div class="container">
+      <p>
+        <a class="btn">mouse Over</a>
+        <button class="btn" type="button">click</button>
+      </p>
+      <div class="collapse">
+        <div class="card">
+          <div class="card-title">Lorem, ipsum.</div>
+          <div class="card-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
+            totam dolores illo dolore temporibus. Dolores esse iure voluptas
+            laboriosam? Minima! Lorem ipsum, dolor sit amet consectetur
+            adipisicing elit. Hic repellat placeat aut consequatur itaque,
+            suscipit, quia blanditiis quo labore quisquam animi incidunt
+            explicabo quaerat nulla qui? Doloribus ipsam recusandae iusto?
+          </div>
+        </div>
+      </div>
+      <div class="collapse">
+        <div class="card">
+          <div class="card-title">Lorem, ipsum.</div>
+          <div class="card-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
+            totam dolores illo dolore temporibus. Dolores esse iure voluptas
+            laboriosam? Minima! Lorem ipsum, dolor sit amet consectetur
+            adipisicing elit. Hic repellat placeat aut consequatur itaque,
+            suscipit, quia blanditiis quo labore quisquam animi incidunt
+            explicabo quaerat nulla qui? Doloribus ipsam recusandae iusto?
+          </div>
+        </div>
+      </div>
+    </div>
+    <h2>Collapse (bellow : data-collapsed = false) + Card</h2>
+    <div class="container">
+      <p>
+        <a class="btn">mouse Over</a>
+        <button class="btn" type="button">click</button>
+      </p>
+      <div class="collapse show" data-collapsed="false">
+        <div class="card">
+          <div class="card-title">Lorem, ipsum.</div>
+          <div class="card-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
+            totam dolores illo dolore temporibus. Dolores esse iure voluptas
+            laboriosam? Minima! Lorem ipsum, dolor sit amet consectetur
+            adipisicing elit. Hic repellat placeat aut consequatur itaque,
+            suscipit, quia blanditiis quo labore quisquam animi incidunt
+            explicabo quaerat nulla qui? Doloribus ipsam recusandae iusto?
+          </div>
+        </div>
+      </div>
+      <div class="collapse show" data-collapsed="false">
+        <div class="card">
+          <div class="card-title">Lorem, ipsum.</div>
+          <div class="card-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
+            totam dolores illo dolore temporibus. Dolores esse iure voluptas
+            laboriosam? Minima! Lorem ipsum, dolor sit amet consectetur
+            adipisicing elit. Hic repellat placeat aut consequatur itaque,
+            suscipit, quia blanditiis quo labore quisquam animi incidunt
+            explicabo quaerat nulla qui? Doloribus ipsam recusandae iusto?
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-row">
+      <p>
+        <a class="btn">mouse Over</a>
+        <button class="btn" type="button">click</button>
+      </p>
+      <div class="collapse-row show" data-collapsed="false">
+        <div class="card">
+          <div class="card-title">Lorem, ipsum.</div>
+          <div class="card-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
+            totam dolores illo dolore temporibus. Dolores esse iure voluptas
+            laboriosam? Minima! Lorem ipsum, dolor sit amet consectetur
+            adipisicing elit. Hic repellat placeat aut consequatur itaque,
+            suscipit, quia blanditiis quo labore quisquam animi incidunt
+            explicabo quaerat nulla qui? Doloribus ipsam recusandae iusto?
+          </div>
+        </div>
+      </div>
+      <div class="collapse-row show" data-collapsed="false">
+        <div class="card">
+          <div class="card-title">Lorem, ipsum.</div>
+          <div class="card-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
+            totam dolores illo dolore temporibus. Dolores esse iure voluptas
+            laboriosam? Minima! Lorem ipsum, dolor sit amet consectetur
+            adipisicing elit. Hic repellat placeat aut consequatur itaque,
+            suscipit, quia blanditiis quo labore quisquam animi incidunt
+            explicabo quaerat nulla qui? Doloribus ipsam recusandae iusto?
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const collapseElement = function (element) {
+        element.style.height = element.scrollHeight + "px";
+        // prevent disappearing non-collapsed element on first click.
+        const elementTransition = element.style.transition;
+        element.style.transition = "";
+
+        element.style.height = element.scrollHeight + "px";
+        requestAnimationFrame(() => {
+          element.style.transition = elementTransition;
+          element.style.height = 0 + "px";
+        });
+
+        const transitionEndHandler = () => {
+          element.dataset.collapsed = "true";
+          element.classList.remove("show");
+          element.removeEventListener("transitionend", transitionEndHandler);
+        };
+        element.addEventListener("transitionend", transitionEndHandler);
+      };
+
+      const expandElement = (element) => {
+        element.classList.add("show");
+
+        element.style.height = 0;
+        element.style.height = element.scrollHeight + "px";
+
+        element.dataset.collapsed = "false";
+      };
+      const expandOrCollapseElement = (element) => {
+        element.dataset.collapsed === "false"
+          ? collapseElement(element)
+          : expandElement(element);
+      };
+
+      const bindTogglerAndCollapsibleElement = (toggler, event, element) => {
+        toggler.addEventListener(
+          event,
+          expandOrCollapseElement.bind(null, element)
+        );
+      };
+
+      document.querySelectorAll(".container").forEach((container) => {
+        const [linkToggler, buttonToggler] = container.querySelectorAll(".btn");
+        const [$collapsible1, $collapsible2] = container.querySelectorAll(
+          ".collapse"
+        );
+        bindTogglerAndCollapsibleElement(
+          linkToggler,
+          "mouseover",
+          $collapsible1
+        );
+        bindTogglerAndCollapsibleElement(buttonToggler, "click", $collapsible2);
+      });
+
+      const containerRow = document.querySelector(".container-row");
+      containerRow.addEventListener("click", (e) => {
+        const [linkToggler, buttonToggler] = containerRow.querySelectorAll(
+          ".btn"
+        );
+        const [$collapsible1, $collapsible2] = containerRow.querySelectorAll(
+          ".collapse-row"
+        );
+        if (e.target === linkToggler) {
+          $collapsible1.classList.toggle("show");
+        }
+        if (e.target === buttonToggler) {
+          $collapsible2.classList.toggle("show");
+        }
+      });
+    </script>
+  </body>
+</html>

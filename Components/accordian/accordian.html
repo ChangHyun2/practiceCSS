@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="accordian.css">
+    <script src="accordian.js" defer></script>
+  </head>
+  <body>
+    <h1>Accordian</h1>
+    <h2>Accordian-nav</h2>
+    <nav>
+      <ul class="accordian-nav">
+        <li class="btn" tabindex=0 data-target="bellow1">bellow1</li>
+        <li class="btn" tabindex=0 data-target="bellow2">bellow2</li>
+        <li class="btn" tabindex=0 data-target="bellow3">bellow3</li>
+        <li class="btn" tabindex=0 data-target="bellow4">bellow4</li>
+      </ul>
+    </nav>
+    <h2>Accordian</h2>
+    <div class="accordian">
+      <div class="accordian__bellow">
+        <button class="accordian-btn btn" >bellow1</button>
+        <div data-toggler="bellow1"class="accordian__bellow-content collapse">
+          <div class="card-body">
+            <h2 class="card-title">Card title</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <a href="#" class="btn btn--primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="accordian__bellow">
+        <button class="accordian-btn btn" >bellow2</button>
+        <div data-toggler="bellow2"class="accordian__bellow-content collapse">
+          <div class="card-body">
+            <h2 class="card-title">Card title</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <a href="#" class="btn btn--primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="accordian__bellow">
+        <button class="accordian-btn btn" >bellow3</button>
+        <div data-toggler="bellow3"class="accordian__bellow-content collapse">
+          <div class="card-body">
+            <h2 class="card-title">Card title</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <a href="#" class="btn btn--primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="accordian__bellow">
+        <button class="accordian-btn btn" >bellow4</button>
+        <div data-toggler="bellow4"class="accordian__bellow-content collapse show" data-collapsed="false">
+          <div class="card-body">
+            <h2 class="card-title">Card title</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <a href="#" class="btn btn--primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+    </div><h2>Accordian-row</h2>
+    <div class="accordian accordian-row">
+        <button class="accordian-btn btn" data-toggler="true">A</button>
+        <div class="collapse-row">
+          <div class="card-body">
+            <h2 class="card-title">Card title</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <a href="#" class="btn btn--primary">Go somewhere</a>
+          </div>
+        </div>
+        <button class="accordian-btn btn" data-toggler="true">B</button>
+        <div class="collapse-row">
+          <div class="card-body">
+            <h2 class="card-title">Card title</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <a href="#" class="btn btn--primary">Go somewhere</a>
+          </div>
+        </div>
+        <button class="accordian-btn btn" data-toggler="true">C</button>
+        <div class="collapse-row">
+          <div class="card-body">
+            <h2 class="card-title">Card title</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <a href="#" class="btn btn--primary">Go somewhere</a>
+          </div>
+        </div>
+        <button class="accordian-btn btn" data-toggler="true">D</button>
+        <div class="collapse-row" >
+          <div class="card-body">
+            <h2 class="card-title">Card title</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <a href="#" class="btn btn--primary">Go somewhere</a>
+          </div>
+      </div>
+    </div>
+    
+  </body>
+</html>

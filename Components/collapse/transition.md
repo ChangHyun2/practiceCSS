@@ -30,5 +30,5 @@
 
 2. js를 이용한 방법
 
-- element.scrollHeight : element의 content-box height만 가져온다.
+- element.scrollHeight : element의 content-box height를 가져온다. so, height가 content-box height보다 작을 경우, 보이는 부분과 보이지 않는 부분을 모두 더한 결과가 반환됨
 - 

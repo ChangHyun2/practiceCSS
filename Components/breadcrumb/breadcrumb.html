@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">    <style>
+      /* default */
+      .breadcrumb {
+        display: flex;
+        align-items: center;
+      }
+      .divider {
+        margin: 0 0.5em;
+      }
+      i.divider {
+        font-size: 0.6em;
+        margin: 0 0.7em;
+      }
+
+      /* font size customizing */
+      .text-sm {
+        font-size: 1rem;
+      }
+      .text-md {
+        font-size: 2rem;
+      }
+      .text-lg {
+        font-size: 3rem;
+      }
+      h2 {
+        margin-top: 3rem;
+        padding-top: 1rem;
+        border-top: 1px solid #eee;
+      }
+    </style>
+  </head>
+  <body>
+      <h1>responsive Breadcrumb</h1>
+      <h2>text-sm</h2>
+      <div class="breadcrumb text-sm">
+          <a>bread</a>
+          <div class="divider">/</div>
+          <a>crumb</a>
+          <div class="divider">/</div>
+          <a>!</a>
+        </div>
+        <h2>text-md</h2>
+        <div class="breadcrumb text-md">
+            <a>bread</a>
+            <div class="divider">/</div>
+            <a>crumb</a>
+            <div class="divider">/</div>
+            <a>!</a>
+        </div>
+    </div>
+    <h2>text-lg</h2>
+    <div class="breadcrumb text-lg">
+      <a>bread</a>
+      <i class="divider fa fa-arrow-right"></i>
+      <a>crumb</a>
+      <i class="divider fa fa-arrow-right"></i>
+      <a>!</a>
+    </div>
+  </body>
+</html>

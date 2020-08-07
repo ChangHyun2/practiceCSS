@@ -7,7 +7,7 @@
     height: auto;
 }
 ```
-width에 맞춰 responsive하게 반응
+width에 맞춰 height가 반응
 height에 유의
 
 ## image thumbnails

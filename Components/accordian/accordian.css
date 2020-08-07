@@ -1,0 +1,131 @@
+body {
+  width: 90%;
+  max-width: 1200px;
+  margin: 1em auto;
+}
+/* default */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* collapse */
+.collapse {
+  overflow: hidden;
+}
+.collapse:not(.show) {
+  display: none;
+}
+
+.collapse-row {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: width 0.8s;
+  transition-timing-function: ease-out;
+  transition-timing-function: cubic-bezier(0.34, 1.31, 1, 0.85);
+}
+.collapse-row:not(.show) {
+  width: 0%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 잔상 line 제거 */
+.collapse-row:not(.show):after {
+  content: "";
+  display: invisible;
+  position: absolute;
+  background: #fff;
+}
+
+/* accordian nav */
+ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+li {
+  margin: 1em;
+}
+/* accordian */
+
+.accordian .collapse {
+  transition: height 0.5s;
+  transition-timing-function: ease-out;
+  transition-timing-function: cubic-bezier(0.01, 0.51, 0.37, 0.98);
+}
+
+.btn.accordian-btn {
+  width: 100%;
+  display: block;
+  border: none;
+  border-radius: 0;
+  position: relative;
+  box-shadow: 0 0 0 1px #a6c8ff;
+}
+
+.btn.accordian-btn:focus {
+  box-shadow: 0 0 0 1px #a6c8ff;
+  background-color: #0043ce;
+}
+.accordian-row .btn.accordian-btn {
+  width: auto;
+}
+.accordian-row {
+  display: flex;
+}
+.accordian-row .collapse-row:not(.show) {
+  width: 0%;
+}
+
+/* btn */
+.btn {
+  display: inline-block;
+  padding: 0.6em 1em;
+  border-radius: 0.2em;
+  border: 2px solid transparent;
+  background-color: #0f62fe;
+  color: #fff;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  outline: none;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: background-color 0.15s ease-in-out, box-shadow 0.25s ease-in-out;
+}
+.btn:hover {
+  background-color: #0043ce;
+}
+.btn:focus {
+  box-shadow: 0 0 0 0.2em #a6c8ff;
+}
+.btn:active {
+  background-color: #0f62fe;
+}
+
+/* card */
+.card-body {
+  padding: 1em;
+}
+.card-body:last-child {
+  border: 1px solid #ddd;
+  border-bottom-right-radius: 1em;
+  border-bottom-left-radius: 1em;
+}
+.card-title {
+  margin-bottom: 1em;
+}
+.card-text {
+  margin-bottom: 1em;
+}
+
+body > h2 {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}

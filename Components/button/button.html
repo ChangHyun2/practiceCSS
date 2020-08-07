@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      .btn-block {
+        display: block;
+        width: 100%;
+      }
+      .btn {
+        display: inline-block;
+        padding: 0.6em 1em;
+        border-radius: 0.2em;
+        border: 2px solid transparent;
+        background-color: #0f62fe;
+        color: #fff;
+        text-decoration: none;
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        outline: none;
+        cursor: pointer;
+        vertical-align: middle;
+        transition: background-color 0.15s ease-in-out,
+          box-shadow 0.25s ease-in-out;
+      }
+
+      .btn:hover {
+        background-color: #0043ce;
+      }
+      .btn:focus {
+        box-shadow: 0 0 0 0.2em #a6c8ff;
+      }
+      .btn:active {
+        box-shadow: 0 0 0 0.2em #a6c8ff;
+      }
+      .btn {
+        margin-bottom: 1rem;
+      }
+
+      /* adjust padding */
+      .btn-sm {
+        padding: 0.3em 0.5em;
+      }
+      .btn-md {
+        padding: 0.9em 1.5em;
+      }
+      .btn-lg {
+        padding: 1.2em 1.8em;
+      }
+
+      /* adjust font-size : responsive padding */
+      .text-lg {
+        font-size: 2rem;
+      }
+      .text-md {
+        font-size: 1.5rem;
+      }
+      .text-sm {
+        font-size: 0.6rem;
+      }
+
+      body {
+        width: 90%;
+        margin: 0 auto;
+      }
+
+      h1 {
+        text-align: center;
+        margin: 1rem 0;
+      }
+
+      h2 {
+        margin-top: 3rem;
+        padding-top: 1rem;
+        border-top: 1px solid #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>responsive Buttons</h1>
+    <div>
+      <h2>btn Small / text variables</h2>
+
+      <button class="btn btn-sm btn-block">btn-sm block button</button>
+      <a href="#" class="btn btn-sm text-lg">btn-sm text-lg</a>
+      <button class="btn btn-sm text-md">btn-sm text-md</button>
+      <button class="btn btn-sm">btn-sm default text</button>
+      <button class="btn btn-sm text-sm">btn-sm text-sm</button>
+    </div>
+    <div>
+      <h2>btn Default / text variables</h2>
+      <button class="btn btn-block">block button</button>
+      <button class="btn text-lg">text-lg</button>
+      <button class="btn text-md">text-md</button>
+      <button class="btn">default text</button>
+      <button class="btn text-sm">text-sm</button>
+    </div>
+
+    <div>
+      <h2>btn Medium / text variables</h2>
+      <button class="btn btn-md btn-block">btn-md block button</button>
+      <button class="btn btn-md text-lg">btn-md text-lg</button>
+      <button class="btn btn-md text-md">btn-md text-md</button>
+      <button class="btn btn-md">btn-md default text</button>
+      <button class="btn btn-md text-sm">btn-md text-sm</button>
+    </div>
+    <div>
+      <h2>btn Large / text variables</h2>
+      <button class="btn btn-lg btn-block">btn-lg block button</button>
+      <button class="btn btn-lg text-lg">btn-lg text-lg</button>
+      <button class="btn btn-lg text-md">btn-lg text-md</button>
+      <button class="btn btn-lg">btn-lg default text</button>
+      <button class="btn btn-lg text-sm">btn-lg text-sm</button>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* modal default*/
+      .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .modal:not(.show) {
+        max-height: 0;
+        overflow: hidden;
+      }
+      .modal-left {
+        justify-content: left;
+      }
+
+      .modal-dialog {
+        z-index: 1;
+      }
+
+      .modal .close{
+        float:right;
+        font-size: 1.5rem;
+        margin-bottom: 0.5em;
+      }
+
+      /* backdrop default*/
+      .backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #333;
+      }
+      .backdrop:not(.show) {
+        max-height: 0;
+        overflow: hidden;
+      }
+
+      /* default transition*/
+      .fade {
+        opacity: 1;
+        transition: opacity 0.2s;
+      }
+      .fade:not(.show) {
+        opacity: 0;
+      }
+
+      /* card */
+      .card {
+        border: 1px solid #ddd;
+        border-radius: 1em;
+        padding: 1.6em 1.6em;
+        background-color: #fff;
+      }
+      .card-img-top {
+        width: 100%;
+        margin-bottom: 1em;
+      }
+      .card-title {
+        margin-bottom: 1em;
+      }
+      .card-text {
+        margin-bottom: 1em;
+      }
+      .card .btn{
+          margin-bottom: 0;
+      }
+      /* btn */
+
+      .btn {
+        display: inline-block;
+        padding: 0.6em 1em;
+        border-radius: 0.2em;
+        border: 2px solid transparent;
+        background-color: #0f62fe;
+        color: #fff;
+        text-decoration: none;
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        outline: none;
+        cursor: pointer;
+        vertical-align: middle;
+        transition: background-color 0.15s ease-in-out,
+          box-shadow 0.25s ease-in-out;
+      }
+      .btn:hover {
+        background-color: #0043ce;
+      }
+      .btn:focus {
+        box-shadow: 0 0 0 0.2em #a6c8ff;
+      }
+      .btn:active {
+        box-shadow: 0 0 0 0.2em #a6c8ff;
+      }
+
+      .close {
+        display: inline-block;
+        line-height: 0.7;
+        border: none;
+        background: none;
+        color: #555;
+        font-size: 1rem;
+        user-select: none;
+        transform: scalex(1.3);
+        outline: none;
+      }
+      .close span {
+        display: inline-block;
+      }
+      .close:not([disabled]) {
+        cursor: pointer;
+      }
+      .close:not([disabled]):hover {
+        color: #000;
+      }
+
+      /* left navigation */
+      /* wrapper*/
+      .modal-dialog {
+        height: 100%;
+        display: flex;
+        align-items: center;
+      }
+      /* style nav*/
+      .nav {
+        list-style: none;
+      }
+      .nav li {
+        color: #fff;
+      }
+      h2 {
+        margin-top: 3rem;
+        padding-top: 1rem;
+        border-top: 1px solid #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Modal </h1>
+    <h2>Modal + Card + CloseBtn </h2>
+    <button id="toggler" class="btn">show modal + card</button>
+    <h2>Modal + nav + CloseBtn</h2>
+    <button id="toggler2" class="btn">show modal + nav</button>
+
+    <div class="modal">
+      <div class="backdrop fade" aria-hidden="true"></div>
+      <div class="modal-dialog">
+        <div class="card" style="width:15rem; font-size: 0.7rem;">
+          <button type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <img
+          src="https://images.unsplash.com/photo-1593642702749-b7d2a804fbcf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
+          class="card-img-top"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h2 class="card-title">Card title</h5>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+          <a href="#" class="btn btn--primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal modal-left modalNav">
+      <div class="backdrop fade"></div>
+      <div class="modal-dialog">
+        <ul class="nav">
+          <button type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <li class="itam">content1</li>
+          <li class="itam">content1</li>
+          <li class="itam">content1</li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      const modal = document.querySelector(".modal");
+      const toggler = document.getElementById("toggler");
+      const backdrop = modal.querySelector('.backdrop');
+      const closeBtn = modal.querySelector('.close');
+      
+      const modalNav = document.querySelector(".modalNav");
+      const toggler2 = document.getElementById("toggler2");
+      const backdrop2 = modalNav.querySelector('.backdrop');
+      const closeBtn2 = modalNav.querySelector('.close');
+      
+      
+      // modal + card
+      toggler.addEventListener("click", (e) => {
+        backdrop.classList.add("show");
+        modal.classList.add("show");
+      });
+      
+      modal.addEventListener("click", (e) => {
+        
+        if (e.target === backdrop 
+        || e.target.closest('.close')===closeBtn) {
+          backdrop.classList.remove("show");
+          modal.classList.remove("show");
+        }
+      });
+
+      // modal + nav
+
+      toggler2.addEventListener("click", (e) => {
+        backdrop2.classList.add("show");
+        modalNav.classList.add("show");
+      });
+
+      modalNav.addEventListener("click", (e) => {
+        if (e.target === backdrop2 || e.target.closest('.close')===closeBtn2) {
+          backdrop2.classList.remove("show");
+          modalNav.classList.remove("show");
+        }
+      });
+    </script>
+  </body>
+</html>
